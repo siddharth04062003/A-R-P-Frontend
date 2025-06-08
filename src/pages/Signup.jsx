@@ -65,7 +65,7 @@ function SignUp() {
 
                 try {
                   const response = await fetch(
-                    "http://localhost:600/api/user/signup",
+                    "https://a-r-p-backend.onrender.com/api/user/signup",
                     {
                       method: "POST",
                       headers: {

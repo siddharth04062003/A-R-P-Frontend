@@ -15,7 +15,7 @@ const AdminLogin = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:600/api/admin/login", {
+      const res = await axios.post("https://a-r-p-backend.onrender.com/api/admin/login", {
         email,
         password
       });

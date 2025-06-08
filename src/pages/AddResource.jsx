@@ -29,7 +29,7 @@ const AddResource = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:600/api/admin/add-resource",
+        "https://a-r-p-backend.onrender.com/api/admin/add-resource",
         formData,
         {
           headers: {
