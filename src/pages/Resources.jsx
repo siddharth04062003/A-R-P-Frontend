@@ -83,7 +83,7 @@ export default function Resources() {
     setLoading(true);
     setError("");
     try {
-      let url = `http://localhost:600/api/resources/${semester}?`;
+      let url = `https://a-r-p-backend.onrender.com/api/resources/${semester}?`;
 
       if (subject !== "All") url += `subject=${encodeURIComponent(subject)}&`;
       if (type !== "All") url += `type=${encodeURIComponent(type)}&`;
