@@ -77,6 +77,15 @@ export default function Landing() {
             Sign In
           </button>
         </Link>
+        <Link to="/admin-login">
+          <button
+            style={styles.buttonPrimary}
+            onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#f0f0f0")}
+            onMouseLeave={e => (e.currentTarget.style.backgroundColor = "white")}
+          >
+            Admin Login
+          </button>
+        </Link>
         <Link to="/signup">
           <button
             style={styles.buttonSecondary}

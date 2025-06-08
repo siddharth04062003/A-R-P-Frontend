@@ -8,6 +8,8 @@ import SignUp from "./pages/Signup";
 import Resources from "./pages/Resources";
 
 import AuthContext, { AuthProvider } from "./context/AuthContext";
+import AdminLogin from "./pages/AdminLogin";
+import AddResource from "./pages/AddResource";
 
 function RequireAuth({ children }) {
   const { user } = useContext(AuthContext);
@@ -23,7 +25,7 @@ export default function App() {
           <Route path="/" element={<Landing />} />
           { <Route path="/signin" element={<SignIn />} /> }
           { <Route path="/signup" element={<SignUp />} /> }
-
+          { <Route path="/admin-login" element={<AdminLogin/>}/>}
           {/* Protected Route */}
           <Route
             path="/resources"
@@ -33,7 +35,7 @@ export default function App() {
               </RequireAuth>
             }
           />
-
+          <Route path='/admin/add-resource' element={<AddResource/>}/>
           {/* Redirect unknown routes to landing */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
