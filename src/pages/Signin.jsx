@@ -1,4 +1,3 @@
-// src/pages/Signin.jsx
 import React, { useState, useContext } from "react";
 import Heading from "../components/FundamentalComp/Heading";
 import SubHeading from "../components/FundamentalComp/SubHeading";
@@ -24,14 +23,9 @@ function SignIn() {
 
       if (response.ok) {
         const data = await response.json();
-
-        // Store JWT token or whatever your API returns
         localStorage.setItem("token", data.token);
-
-        // Update user in context (you can customize signIn to accept user/token info)
         signIn(email, password); 
 
-        // Navigate to protected resource page after successful login
         navigate("/resources");
       } else if (response.status === 401) {
         alert("Invalid credentials, please try again.");

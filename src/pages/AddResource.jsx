@@ -1,6 +1,61 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+const styles = {
+  container: {
+    height: "100vh",
+    background: "linear-gradient(to bottom right, #cceeff, #e0f7fa)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    fontFamily: "Segoe UI, sans-serif",
+    padding: "20px",
+  },
+  card: {
+    backgroundColor: "#ffffff",
+    padding: "40px",
+    borderRadius: "12px",
+    boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
+    border: "1px solid #90caf9",
+    width: "100%",
+    maxWidth: "480px",
+  },
+  heading: {
+    textAlign: "center",
+    color: "#0077b6",
+    marginBottom: "24px",
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "14px",
+  },
+  input: {
+    padding: "12px",
+    borderRadius: "6px",
+    border: "1px solid #ccc",
+    fontSize: "16px",
+    outline: "none",
+  },
+  button: {
+    padding: "12px",
+    borderRadius: "6px",
+    backgroundColor: "#0077b6",
+    color: "#fff",
+    fontWeight: "bold",
+    border: "none",
+    fontSize: "16px",
+    cursor: "pointer",
+    transition: "background 0.3s ease",
+  },
+  message: {
+    marginTop: "16px",
+    color: "#00796b",
+    textAlign: "center",
+    fontWeight: "500",
+  },
+};
+
 const AddResource = () => {
   const [formData, setFormData] = useState({
     title: "",
@@ -33,7 +88,7 @@ const AddResource = () => {
         formData,
         {
           headers: {
-            "Content-Type" :"application/json",
+            "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
           },
         }
@@ -69,7 +124,7 @@ const AddResource = () => {
           <input
             name="description"
             placeholder="Description"
-            value={formData.desc}
+            value={formData.description}
             onChange={handleChange}
             style={styles.input}
             required
@@ -77,7 +132,7 @@ const AddResource = () => {
           <input
             name="semester"
             placeholder="Semester"
-            value={formData.sem}
+            value={formData.semester}
             onChange={handleChange}
             style={styles.input}
             required
@@ -85,7 +140,7 @@ const AddResource = () => {
           <input
             name="subject"
             placeholder="Subject"
-            value={formData.sub}
+            value={formData.subject}
             onChange={handleChange}
             style={styles.input}
             required
@@ -107,67 +162,14 @@ const AddResource = () => {
             required
           />
 
-          <button type="submit" style={styles.button}>Add Resource</button>
+          <button type="submit" style={styles.button}>
+            Add Resource
+          </button>
         </form>
         {message && <p style={styles.message}>{message}</p>}
       </div>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    height: "100vh",
-    backgroundColor: "#fff",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    fontFamily: "Segoe UI, sans-serif",
-    padding: "20px",
-  },
-  card: {
-    backgroundColor: "#fefefe",
-    padding: "40px",
-    borderRadius: "12px",
-    boxShadow: "0 10px 20px rgba(229, 57, 53, 0.15)",
-    border: "2px solid #e53935",
-    width: "100%",
-    maxWidth: "480px",
-  },
-  heading: {
-    textAlign: "center",
-    color: "#e53935",
-    marginBottom: "24px",
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "14px",
-  },
-  input: {
-    padding: "12px",
-    borderRadius: "6px",
-    border: "1px solid #ccc",
-    fontSize: "16px",
-    outline: "none",
-  },
-  button: {
-    padding: "12px",
-    borderRadius: "6px",
-    backgroundColor: "#e53935",
-    color: "#fff",
-    fontWeight: "bold",
-    border: "none",
-    fontSize: "16px",
-    cursor: "pointer",
-    transition: "background 0.3s ease",
-  },
-  message: {
-    marginTop: "16px",
-    color: "#d32f2f",
-    textAlign: "center",
-    fontWeight: "500",
-  },
 };
 
 export default AddResource;

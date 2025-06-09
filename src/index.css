@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #d9dcd4, #8ea590);
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
